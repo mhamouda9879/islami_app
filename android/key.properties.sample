@@ -1,4 +1,4 @@
-storeFile=app/keystore.jks
 storePassword=hUpsok-xanqad-7bujsi
-keyAlias=upload
 keyPassword=hUpsok-xanqad-7bujsi
+keyAlias=upload
+storeFile=keystore.jks
