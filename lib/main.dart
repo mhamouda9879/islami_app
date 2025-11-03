@@ -14,7 +14,7 @@ import 'package:islami_app/features/pray/data/repo/azan_repo_impl.dart';
 import 'package:islami_app/muslim_app.dart';
 
 import 'package:path_provider/path_provider.dart';
-
+//01018806383
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
