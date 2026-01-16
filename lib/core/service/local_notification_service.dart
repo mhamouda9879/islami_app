@@ -10,11 +10,20 @@ FutureOr<void> onSelectNotification(NotificationResponse details) async {}
 
 class LocalNotificationService {
   static Future<void> requestNotificationPermission() async {
-    final status = await Permission.notification.request();
-    if (status.isGranted) {
+    // Request notification permission (Android 13+)
+    final notificationStatus = await Permission.notification.request();
+    if (notificationStatus.isGranted) {
       log("Notification permission granted");
     } else {
       log("Notification permission denied");
+    }
+
+    // Request exact alarm permission (Android 12+) for precise adhan scheduling
+    final exactAlarmStatus = await Permission.scheduleExactAlarm.request();
+    if (exactAlarmStatus.isGranted) {
+      log("Exact alarm permission granted");
+    } else {
+      log("Exact alarm permission denied - adhan notifications may not be precise");
     }
   }
 
